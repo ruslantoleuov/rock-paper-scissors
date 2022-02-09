@@ -82,14 +82,6 @@ function playRound(playerSelection, computerSelection) {
   return checkWinner(playerSelection, computerSelection);
 }
 
-/*
-  Create game function
-  create for loops which loops over 5 times
-  use regular expression to check the winner
-  store the score of each winner
-  after 5 round console.log(winner)
-*/
-
 function game() {
   let overallResult = "";
   let currentResult = "";
