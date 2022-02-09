@@ -40,7 +40,7 @@ function playerPlay() {
 }
 
 function showWinner(playerSelection, computerSelection, outcome) {
-  let result;
+  let result = "";
 
   switch (outcome) {
     case WIN:
@@ -57,25 +57,67 @@ function showWinner(playerSelection, computerSelection, outcome) {
 }
 
 function checkWinner(playerSelection, computerSelection) {
+  let result = "";
+
   if (playerSelection === ROCK && computerSelection === PAPER) {
-    console.log(showWinner(playerSelection, computerSelection, LOSS));
+    result = showWinner(playerSelection, computerSelection, LOSS);
   } else if (playerSelection === PAPER && computerSelection === SCISSORS) {
-    console.log(showWinner(playerSelection, computerSelection, LOSS));
+    result = showWinner(playerSelection, computerSelection, LOSS);
   } else if (playerSelection === SCISSORS && computerSelection === ROCK) {
-    console.log(showWinner(playerSelection, computerSelection, LOSS));
+    result = showWinner(playerSelection, computerSelection, LOSS);
   } else if (
     (playerSelection === ROCK && computerSelection === ROCK) ||
     (playerSelection === PAPER && computerSelection === PAPER) ||
     (playerSelection === SCISSORS && computerSelection === SCISSORS)
   ) {
-    console.log(showWinner(playerSelection, computerSelection, DRAW));
+    result = showWinner(playerSelection, computerSelection, DRAW);
   } else {
-    console.log(showWinner(playerSelection, computerSelection, WIN));
+    result = showWinner(playerSelection, computerSelection, WIN);
   }
+
+  return result;
 }
 
 function playRound(playerSelection, computerSelection) {
-  checkWinner(playerSelection, computerSelection);
+  return checkWinner(playerSelection, computerSelection);
 }
 
-playRound(playerPlay(), computerPlay());
+/*
+  Create game function
+  create for loops which loops over 5 times
+  use regular expression to check the winner
+  store the score of each winner
+  after 5 round console.log(winner)
+*/
+
+function game() {
+  let overallResult = "";
+  let currentResult = "";
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (i = 0; i < 5; i++) {
+    currentResult = playRound(playerPlay(), computerPlay());
+    console.log(currentResult);
+
+    if (currentResult.includes("Win")) {
+      ++playerScore;
+      console.log(`Player Score: ${playerScore}`);
+    } else if (currentResult.includes("Lose")) {
+      ++computerScore;
+      console.log(`Computer Score: ${computerScore}`);
+    }
+  }
+
+  if (playerScore > computerScore) {
+    overallResult = "Player Wins!";
+  } else if (computerScore > playerScore) {
+    overallResult = "Computer Wins!";
+  } else {
+    overallResult = "It's a tie!";
+  }
+
+  return overallResult;
+}
+
+console.log(game());
