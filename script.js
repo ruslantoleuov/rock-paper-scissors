@@ -1,6 +1,6 @@
-const ROCK = "Rock";
-const PAPER = "Paper";
-const SCISSORS = "Scissors";
+const ROCK = "✊ Rock";
+const PAPER = "✋ Paper";
+const SCISSORS = "✌️ Scissors";
 const WIN = "Win";
 const LOSS = "Loss";
 const DRAW = "Draw";
@@ -36,7 +36,7 @@ function showWinner(playerSelection, computerSelection, outcome) {
       result = `You Lose! ${computerSelection} beats ${playerSelection}`;
       break;
     default:
-      result = "It's a tie.";
+      result = "It's a tie! No points! 🤷‍♂️";
   }
 
   return result;
@@ -85,16 +85,17 @@ function playerPlay(e) {
   paraComputerScore.textContent = computerScore;
 
   if (playerScore === 5) {
-    overallResult = "Final: You Win!";
+    overallResult = "Finally! You Win! 🥳";
     playerScore = 0;
     computerScore = 0;
   } else if (computerScore === 5) {
-    overallResult = "Final: Computer Wins!";
+    overallResult = "Oh No! Maybe next time? 😝";
     playerScore = 0;
     computerScore = 0;
   }
 
   finalResult.textContent = overallResult;
+  finalResult.style.fontWeight = "bold";
   document.body.appendChild(finalResult);
 }
 
