@@ -1,3 +1,3 @@
-# rock-paper-scissors
+# Project: Rock Paper Scissors
 
-My first JavaScript project.
+My first simple JavaScript project.
