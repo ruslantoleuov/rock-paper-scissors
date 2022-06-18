@@ -3,21 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js" defer></script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
-    <h1>Rock, Paper, Scissors</h1>
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
-    <p class="player-score">
-      Player Score:
-      <span></span>
-    </p>
-    <p class="computer-score">
-      Computer Score:
-      <span></span>
-    </p>
+    <span class="choose">Choose</span>
+    <div class="buttons">
+      <button type="button" class="rock">✊ Rock</button>
+      <button type="button" class="paper">✋ Paper</button>
+      <button type="button" class="scissors">✌️ Scissors</button>
+    </div>
+    <div class="scores">
+      <p class="player-score">
+        Player
+        <span>0</span>
+      </p>
+      <p class="computer-score">
+        Computer
+        <span>0</span>
+      </p>
+    </div>
   </body>
 </html>
